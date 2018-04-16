@@ -1,14 +1,15 @@
 \documentclass{article}
+% Packages
 \usepackage[a4paper, total={15cm, 24cm}, bmargin=28mm, footskip=15mm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage[mediumspace, squaren]{SIunits} % eg. \metre. NOTE [p]space not working
+\usepackage[mediumspace, squaren]{SIunits}
 \usepackage{verbatim}
 \usepackage{hyperref}
 %\usepackage{parskip} %skip the indent of a new paragraph.
-\usepackage{booktabs} % Better tables. Provides \toprule, \midrule, \bottomrule.
+\usepackage{booktabs} 
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage{caption}
@@ -17,6 +18,7 @@
 \graphicspath{ {figures/} }
 \usepackage{import}
 \usepackage{url}
+\usepackage{todonotes}
 \usepackage{subfig}
 \usepackage{parskip}
 \usepackage{blindtext}
@@ -25,54 +27,58 @@
 \newcommand*\NewPage{\newpage\null\thispagestyle{empty}\newpage}
 \usepackage{ucs}
 \usepackage{xcolor}
-\definecolor{mygreen}{RGB}{28,172,0} 
-\definecolor{mylilas}{RGB}{170,55,241}
 
-\usepackage{listings}
-\lstset{language=MATLAB,
-            basicstyle=\footnotesize,
-            stringstyle=\color{mylilas}\footnotesize,
-            commentstyle=\color{mygreen}\footnotesize,
-            morecomment=[l][\color{magenta}]{\#},
-   		 	keywordstyle=\color{blue},
-   		 	morekeywords=[2]{1}, keywordstyle=[2]{\color{black}}
-   		 	identifierstyle=\color{black},
-            frame = single,
-            breaklines = true,
-            breakatwhitespace=false,         
-	   		captionpos=b,                    
-   		 	keepspaces=true,                 
-   			numbers=left,                    
-    		numbersep=5pt,                  
-    		showspaces=false,                
-    		showstringspaces=false,
-    		showtabs=false,                  
-    		tabsize=2,
-    		morekeywords={matlab2tikz},
-    		emph=[1]{for,end,break},
-    		emphstyle=[1]\color{blue}
-}
-
-\author{IHelene Hogstad Fossum}
+% Information about document
+\author{Ignacio Scibona & \& & Helene Hogstad Fossum}
 \date{April 2018}
-\title{TMR4290 - Project 2: \\ Marine Power System Calculations}
+\title{TMR4290 - Project 2: \\ Design of a Marine Electric Power System}
 
 \begin{document}
 
+% Titlepage 
 \begin{titlepage} 
     \maketitle
-    % \rule{\linewidth}{0.5mm}
+    \thispagestyle{empty}
     \begin{figure}
     \centering
-    \includegraphics[width=0.5\textwidth]{utils/logontnu_eng}
+    \includegraphics[width=0.5\textwidth]{utils/logontnu_eng.pdf}
     \end{figure}
     
 \end{titlepage}
 
+% Table of Contents (not sure if we need)
+% \newpage
+% \pagenumbering{Roman}
+
+% \tableofcontents
+
+% Main report (NB! Use input files)
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\newpage
+\input{Intro.tex}
+\input{Prob1.tex}
+\input{Prob2.tex}
+\input{Prob3.tex}
+\input{Prob4.tex}
+\input{Prob5.tex}
+\input{Prob6.tex}
+\input{Prob7.tex}
+\input{Prob8.tex}
+
+
+% References
 \newpage
 \thispagestyle{empty}
 \bibliographystyle{IEEEtran}
 \bibliography{bibliography.bib}
 
-\input{appendix.tex}
+
+% Appendix
+\newpage
+\pagenumbering{Alph}
+\setcounter{page}{1}
+\input{Appendix.tex}
+
+
 \end{document}
