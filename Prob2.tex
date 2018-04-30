@@ -1,15 +1,16 @@
 \section*{Problem 2}
 \subsection*{2a)}
 
-\todo[inline]{See that there is a problem with the cross-reference 1.1 instead 1.a}
-
-In order to fulfill the Equipment Class 3 required by the Petroleum Safety Authority Norway (as specified in \ref{problem_1a}) and in accordance to the DNV-GL regulations \ref{Sec:Equivalent_Notations} \cite{DNV-GL_RP_Dynamic_positioning}, the notation will be DYNPOS(AUTRO).
+In order to fulfill the Equipment Class 3 required by the Petroleum Safety Authority Norway (as specified in \nameref{problem_1a}) and in accordance to the DNV GL regulations \ref{Sec:Equivalent_Notations} \cite{RecommendedPractices_DP_DNVGL}, the notation will be DYNPOS(AUTRO). The tables in appendix \ref{Sec:Equipment_Requirements} and \ref{Sec:Class_Notations} specifies the DNV GL requirements for each part of the system that is needed to be classed as DYNPOS(AUTRO). 
 
 Such notation sets as a design requirements:
 
 \begin{itemize}
-    \item Redundancy of all active components.
+    \item Redundancy of all active components (classification societies interpret this differently).
     \item Physical separation of the components.
+    \item Time to terminate: Be able to maintain station long enough to safely terminate the work in progress after a \textit{single failure}.
+    \item The equipment intended to provide redundancy is available immediately and with a minimum of operator intervention.
+    \item Adequate remaining power and thrust after a \textit{worst-case failure}
 \end{itemize}
 
 \todo[inline]{Keep reading recommended practices from page 22}

@@ -4,7 +4,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
-\usepackage{amssymb}
+\usepackage{amssymb} 
 \usepackage[mediumspace, squaren]{SIunits}
 \usepackage{verbatim}
 \usepackage{hyperref}
@@ -15,21 +15,26 @@
 \usepackage{caption}
 \usepackage{multirow}
 \usepackage{epstopdf}
+\usepackage{nameref}
 \graphicspath{ {figures/} }
 \usepackage{import}
+\usepackage{tabu}
 \usepackage{url}
 \usepackage{todonotes}
 \usepackage{subfig}
 \usepackage{parskip}
 \usepackage{blindtext}
+\usepackage{enumitem}
 {\setlength\intextsep{0pt}}
 \newcommand{\squeezup}{\vspace{-2.5mm}}
 \newcommand*\NewPage{\newpage\null\thispagestyle{empty}\newpage}
 \usepackage{ucs}
 \usepackage{xcolor}
+\newcommand{\myParagraph}[1]{\paragraph{#1}\mbox{}\\} % To get newline
+    
 
 % Information about document
-\author{Ignacio Scibona & \& & Helene Hogstad Fossum}
+\author{Ignacio Scibona \and Helene Hogstad Fossum}
 \date{April 2018}
 \title{TMR4290 - Project 2: \\ Design of a Marine Electric Power System}
 
@@ -61,11 +66,10 @@
 \input{Prob2.tex}
 \input{Prob3.tex}
 \input{Prob4.tex}
-\input{Prob5.tex}
-\input{Prob6.tex}
+\input{Prob5and6.tex}
 \input{Prob7.tex}
 \input{Prob8.tex}
-
+%\input{Questions.tex}
 
 % References
 \newpage

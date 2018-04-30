@@ -1,5 +1,87 @@
 \section*{Problem 3}
+
+\todo[inline]{Ask how different the definitions should be compared to the ones stated on the Rules}
+\todo[inline]{Is it okay to take all the definitions from the same table in the rules? \cite{RulesShipsDNVGLPart6Chap3} (table 3 Definitions). \\ There are a lot more details added further down in the document.}
+
+%%%%%%%%%%%%%%%%%%%%% 3b) %%%%%%%%%%%%%%
 \subsection*{3a)}
-\subsection*{3b)}
+% DP System
+\myParagraph{DP system:} \label{par:Def_DP_system}
+
+DNV GL defines a \textit{DP vessel} (dynamically positioned vessel) as a vessel that is capable of automatically maintain its position and heading either along in a fixed position or along a predetermined path. As opposed to i.e thruster assisted mooring, this has to happen by only using thruster force\cite{RulesShipsDNVGLPart6Chap3}. 
+
+DNV GL then defines a \textit{DP system} as consisting of a \textit{power system}, a \textit{thruster system}, a \textit{DP-Control system} and an \textit{independent joystick system} \cite{RulesShipsDNVGLPart6Chap3}. The power- and thruster systems are explained in Section \nameref{sec:3b}. 
+
+The \textit{DP-Control system} is defined as all control systems, hardware and software that is used by the vessel to be a DP vessel. This includes \textit{sensor systems}, displays, operational panels, a \textit{positioning reference system}, one or more \textit{uninterruptble power supply(s) (UPSs)}, the needed cabling and the dynamic positioning control computer(s) \cite{RulesShipsDNVGLPart6Chap3}.  
+\todo{Do we also have to explain sensor system, UPS and positioning reference system?}
+
+The \textit{Joystick system} provides manual control of the system, letting the operator define the output thrust, including turning moment \cite{RulesShipsDNVGLPart6Chap3}. \todo{Add for which classes of DP systems the joystick is required} 
+
+% Consequence analysis
+\myParagraph{Consequence analysis:}
+\textbf{Consequence analysis} is defined by DNV GL as a system a part of the DP-control system that issues an alarm if the vessel is unable to be in DP operate under the current weather conditions if the worst case failures occurs. These requirements are set in advance \cite{RulesShipsDNVGLPart6Chap3}. 
+
+
+%%%%%%%%%%%%%%%%%% 3b) %%%%%%%%%55%%%%%%%%%%%
+\subsection*{3b)} \label{sec:3b}
+\myParagraph{Power system:}
+DNV GL defines the \textbf{Power system} as all components and systems necessary to supply the DP system with power. That would include the prime movers with auxiliary systems, the generators, the switchboards, the UPSs, the cabling and distribution system. If the system is classed as DYNPOS(AUTR) or DYNPOS(AUTRO), it also includes a power management system (PMS) \cite{RulesShipsDNVGLPart6Chap3}.  
+
+
+\myParagraph{Thruster system:}
+DNV GL defines the \textbf{Thruster system} as all components necessary to supply the DP system with thrust force and direction. That would include the thrusters with drives including the auxiliary system, the thruster control system, the necessary cabling and the main propellers and rudders if they are also part of the DP system \cite{RulesShipsDNVGLPart6Chap3}. (The main propellers and/or thrusters can be disconnected from the DP system and only used in transit. In that case, the DP system would only consist of tunnel thrusters, azimuth thrusters etc.)
+
+
+
+
+%%%%%%% 3c) %%%%%%%%%%%
 \subsection*{3c)}
-\subsection*{3d)}
+
+\myParagraph{Reliability:} 
+In the DNV GL rules, \textbf{Reliability} ability of a component or system to perform its required function without failure during a specified time interval
+
+\myParagraph{Redundancy:} 
+\textbf{Redundancy} is defined as the ability of a component or system to maintain its function when one failure has occurred.
+Classification societies interpret \textit{redundancy} differently. For DNV GL it can be achieved, for instance, by installation of multiple components, systems or alternative means of performing a function \cite{RulesShipsDNVGLPart6Chap3}. It should also take into account the long term loss of a major item of machinery such as a generator or thruster \cite{RecommendedPractices_DP_DNVGL}. \todo{Add another definition by another classification society to see the difference?}
+
+\todo[inline]{By now it is copy-paste}
+
+\myParagraph{Redundancy Group:} 
+
+all components and systems that is subject to a single failure as specified in [4], for the specific notations
+
+Guidance note:
+The redundancy groups will emerge as a consequence of the worst case single failure within each
+group. The rules do not give requirements to the number of (beyond 2) or ratio between the
+defined groups. The groups should be identified in the FMEA, verified by testing and incorporated in
+the consequence analysis
+
+    \begin{comment}
+    \cite{RecommendedPractices_DP_DNVGL} page 26.
+    
+    There are three key elements in any redundancy concept:
+    1) performance
+    2) protection
+    3) detection
+    
+    THEN THEY EXPLAIN EACH. SEE IF WE NEED TO INCLUDE THIS
+    \end{comment}
+
+%%%%%%% 3d) %%%%%%%%%%%
+\subsection*{3d)} \label{Sec:3d}
+
+\myParagraph{Failure}: 
+DNV GL defines \textbf{failure} as an occurrence in a component or system causing one or both of the following effects:
+\begin{itemize}
+    \item loss of component or system function.
+    \item deterioration o f functional capability to such an extent that the safety of the vessel, personnel or environment is significantly reduced.
+\end{itemize}
+
+Depending on the DP class, the definition of single failure includes or not certain failure modes. For DYNPOS(AUTRO) it includes: incidents of fire and flooding and all break-downs of systems and components.
+
+\myParagraph{Worst-case failure}: failure that results in the largest reduction of the position and/or heading keeping capacity. This means loss of the most significant redundancy group, for the prevailing operation.
+
+\todo[inline]{6.11 Consequence analysis
+6.11.1 The dynamic positioning control systems shall perform an analysis of the ability to maintain position after worst case failures. An alarm shall be initiated, with a maximum delay of 5 minutes, when a failure will cause loss of position in the prevailing weather conditions. In case the redundancy is based on limited energy sources like e.g. batteries then the duration of the delay should be considered.
+Guidance note:
+This analysis should verify that the thrusters and generators remaining in operation after the worst case failure can generate the same resultant thruster force and moment as required before the failure.}

@@ -1,1 +1,53 @@
 \section*{Problem 4}
+
+As per DNV GL Rules for Classification of Ships \cite{RulesShipsDNVGLPart6Chap3} a \textit{power management system (PMS)} is required for both DYNPOS(AUTR) and DYNPOS(AUTRO) (DP Class 2 and DP Class 3).
+
+\begin{comment}
+Requirements (Section 1.8.4 - Power Management):
+
+\begin{itemize}
+    \item Automatic PMS, operating with both open and close bus-tie breakers.
+    \item Shall be redundant   
+    
+    8.4.3 A failure in the power management system shall not cause alteration to the power generation, and
+shall initiate an alarm in the DP control centre.
+
+8.4.4 It shall be possible to operate the switchboards in manual as required for the main class, with the
+power management system disconnected.
+
+8.4.5 Means shall be implemented in order to prevent overloading of the power plant, e.g. by use of
+interlocks, thrust limitations or other means. Means shall also be implemented to prevent reactive overload.
+In case trust is reduced by any other system than the DP-control system this shall be communicated to the
+DP-control system.
+
+8.4.6 Overload, caused by the stopping of one or more generators subject to common mode failure, shall not
+create a black-out. Reduction in load, e.g. thruster pitch or speed reduction shall be introduced to prevent
+blackout and enable standby generators to come online.
+
+8.4.7 When generators are running in parallel there shall be protection systems able to detect failures
+that may result in a full or partial black-out situation and effectuate actions to prevent such incidents. The
+effectuated actions shall be so that the consequence of the failure is minimized. This means that for failures
+where the system has sufficient time the faulty component shall be tripped before a full or partial black-out
+situation occurs. Such protection systems shall be independent from automatic voltage regulators (AVRs) and
+engine governors.
+
+8.4.8 When the system is operating with closed bus-tie breakers between switchboards belonging to
+different redundancy groups and the first action performed by the protection system does not remove the
+failure, or it is not performed (e.g. due to hidden failure), the protection system shall be able to execute
+alternative actions to isolate the faulty component or system before the failure effect could propagate from
+one system to another.
+\end{itemize}
+\end{comment}
+
+Functions (Section 1.8.4.2 - Automatic Functions of the PMS):
+
+The PMS shall be capable of performing the following automatic functions:
+
+\todo[inline]{COPY-PASTE SO FAR}
+
+\begin{itemize}
+    \item load dependent starting of additional generators.
+    \item block starting of large consumers when there is not adequate running generator capacity, and to start up generators as required, and hence to permit requested consumer start to proceed
+    \item it shall be possible to set a minimum number of connected generator sets in each redundancy group
+    \item black-out recovery on individual switch-board sections by starting of generators and recovery of full automatic thruster control from DP within 45 seconds after black-out. This means that the DP-control systems shall receive ready signal within 45 seconds.
+\end{itemize}

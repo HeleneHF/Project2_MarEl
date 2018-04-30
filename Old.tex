@@ -1,0 +1,80 @@
+
+%%%%%%%%%%%%% Problem 5 and 6 %%%%%%%%%%%%%%%%%%%%%%%%%%
+It was hard to separate problem 5 and 6, since the explanation of our choices are very mixed together. In order to not constantly repeat ourselves, we decided to make one text answering both task 5 and task 6. We used some smaller headlines in our text, so it is easier to find each particular explanation \todo{Need a better word}. 
+
+\subsubsection*{Introduction - What was our goal when designing}
+% Introduction - Present our goal for the design
+%   - Close to industry standards
+%   - Redundancy and safety 
+%   - Realistic equipment
+%   - Realistic loads on the generators
+%   - Assumptions  did about what was/was not important
+The philosophy when designing the power system and the thruster configuration was most off all to make a system that is realistic and in accordance to the industry standards and as close as possible to its normal uses. If a DP system fail it can lead to hazards and serious consequences. Therefore, efforts was putt into making the system more reliable than the minimum requirements. This includes multiple levels of redundancy. In order to make the system seem realistic, it was decided to also try to make sure the equipment that was used in our project was close to the ones used by the industry today. Also, the load level on the generators were considered in order to try to make them work within a reasonable load level. However, it was not necessary to do that with the thrusters, since its power demand was given, thus out of the scope of the project. \todo{add better reasons for why not}. It was also assumed that the service load during worst-case failure stayed the same as it was during single failure, so 4MW.
+
+
+\subsubsection*{Industry Practices}
+% Present industry standards
+When looking into the single-line diagrams and thruster configurations of semi-submersibles used today, it can be seen that the most common arrangement was to use four separate generation compartments and one or two thrusters placed in each corner of the pontoons. These kind of configurations can be seen in the example configuration from the lecture notes and the diagram for the semi-sub "DEEPWATER HORIZON" found in Appendix. \ref{Sec:ThrusterConfiguratons}. The thrusters are rotatable \todo{Double check this. Always or just in my mind?}. 
+   
+
+
+\subsubsection*{Reasons for numbers of compartments, propulsion units and their size}
+% Present our layout
+%   - Why did we use four compartments?
+%   - Why did we have to have three thrusters in each compartment?
+%   - What was the reason for placing the thrusters the way we did
+%   - What was the reason for connecting the thrusters to the different compartments
+% the way we did?
+In order to make the rig as reliable as wanted \colorbox{green}{required}, it was decided to stick with the industry practice of separating the system into four compartments. \todo{Add some more detail I guess}. Each compartment is physically separated from the others according to the rules for the DYNPOS(AUTRO) class \cite{RulesShipsDNVGLPart6Chap3}. 
+
+Each \colorbox{green}{generation} compartment contains two gensets one main switchboard and one service loads transformer. All the switchboards are connected to each other by bus-tie breakers in a \textit{ring} configuration. 
+
+%Each switchboard is also connected to three thrusters, that are each fitted in different corners of the rig.
+
+%The compartments are each consists of two gensets that are connected to three thrusters with a separate bus bar \todo{Is this the correct word to use?}. 
+
+In the design requirements, the total propulsion power needed in the worst-case failure case is 34MW. As stated in Section \nameref{Sec:3d}, DNV GL defines the worst-case failure as the (single) failure that causes the the loss of the most significant redundancy group. In the present case, equipment class DYNPOS(AUTRO), that would include, but not be limited to, the loss of one genset compartment in the system due to a failure such as flooding, collision, or failure of a main switchboard.
+
+
+
+% In the case of one compartment out of service, the three remaining compartments would have to supply enough propulsion power. If each of the compartments had two propulsion units connected to it, \colorbox{green}{that would correspond to each of them having to take 5.7MW propulsion power. If each had 3 propulsion units, it would correspond to each of them providing 3.8MW}. \todo{I don't understand what you t does not matter how many compartments available, they have to supply 34MW in total} 
+
+In the case of one compartment out of service, the three remaining compartments would have to supply enough propulsion power. If each of the compartments had two propulsion units connected to it, then each thruster would be of minimum 5.7MW. Another case would be if each compartment had three propulsion units 
+
+of them having to supply 5.7MW propulsion power. If each had 3 propulsion units, it would correspond to each of them providing 3.8MW \todo{I don't understand what you mean. It does not matter how many compartments available, they have to supply 34MW in total} 
+
+
+However, a failure of a DP system on a rig would have potentially significant consequences, both to avoid potential environmental damage, large costs etc. Therefor, it is desirable that the system is more redundant than the minimum requirement. In order to ensure that, the rig was designed such that it would also be able to hold it's position if two whole compartments were out of service. In that case, if each compartment has two propulsion units each, they would have to be able to provide 8.5MW of propulsion power. If they each had three units, they would have to provide 5.7MW. 
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c c c c}
+         \multicolumn{4}{c}{\textbf{Number of failed compartments}} \\
+         \toprule
+            &       & 1         & 2          \\
+        \midrule
+        \multirow{3}{7em}{\textbf{Thrusters per compartment}}
+            & 2     & 5.3MW     & 8MW       \\
+            & 3     & 3.6MW     & 5.3MW     
+        
+    \end{tabular}
+    \caption{Summary of power needed per thruster for each case}
+    \label{tab:powerWorstCaseFailure}
+\end{table}
+
+
+Another goal was to make the system as realistic as possible. Looking into the manufacturer brochures of Brunvoll , Värtsilä\cite{WärtsiläThrusters}, Rolls Royce\cite{RollsRoyceThrusters} and Voith\cite{VoithThrusters}, it becomes clear that none of the larger thruster manufactures make thrusters with larger capacity than 6.5MW today. That means that in order to have the des
+
+ired redundancy using realistic thrusters, there must be three thrusters per compartment that are able to provide a minimum of 5.3MW propulsion power. 
+
+
+\subsection*{Thruster connection vs. thruster positioning}
+In order for the semi-submersible to have good maneuverability, it is important that it has propulsion power in each corner. Therefor, the system is designed such that the failure of one compartment will not lead to the failure of all thrusters in a single corner. All thrusters in each corner is therefore connected to separate compartments in the electrical system. The complete design and connections can be seen in Figure \todo{ref our figure when it is done}.
+
+\subsection*{Physical positioning of the thrusters}
+The thrusters on each of the pontoons most be able to provide thrust in both lateral and longitudinal directions. They have to be separated from each other to avoid thruster-thruster interaction \cite{MarReg1Comp} \todo{Not that it is an actual citation, just, stuff}. 
+
+\subsection*{Bus bars and requirements for bus tie breakers}
+\todo[inline]{Add why good with AC for manual switches?}
+\todo[inline]{Add use of power electronics for systems today?}
+\todo[inline]{We have to justify our choice of voltage on the bus bar. See the standard bla bla in the lecture notes}
