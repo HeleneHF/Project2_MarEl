@@ -1,7 +1,7 @@
-\section*{Problem 8}
+\section{Problem 8}
 The genset that has been used as reference in the design is the MAK Marine WM 46 DF described in \cite[p.128 -129]{CatGenerators}. There it states that the generator efficiency is approximately 0.96\% and the power factor is 0.8. A power factor value of 0.8 is also assumed in the NORSOK standard \cite{NORSOKstandard}, therefore these values are adopted for the calculations. 
 
-\subsection*{8a)}
+\subsection{Problem 8a)} \label{sec:8a)}
 The voltage adopted for the main switchboards is 11kV, that is the recommended level by the NORSOK standard \cite[p.10]{NORSOKstandard} for systems where the total installed generated power exceeds 20MW.
 
 In the design used, the thrusters are also connected to separate switchboards. For such power levels, the NORSOK standard recommends voltage levels between 2.4 and 6.6kV \cite{NORSOKstandard}. The adoption of such voltages would lead to the need of installing one transformer on each feeder, which would lead to significant extra cost and a more complex design. It was therefore decided to keep the voltage level at 11kV also for these switchboards. %\todo{Confirm with the lecturer/TA if this is OK}  
@@ -12,7 +12,7 @@ In the design used, the thrusters are also connected to separate switchboards. F
 
 % \todo{Remember to ask and clarify the voltage level of the thrusters' switchboards}
 
-\subsection*{8b)}
+\subsection{Problem 8b)} \label{sec:8b)}
 %\todo{Ask if the transformers should work at a partial load (i.e if their rating should be more than 4MWe)}
 The service load after single failure (assumed the same for worst case failure) is 4MW and the service load under normal operations is in Section \nameref{Sec:designRequirements} assumed to be 12MW. It is required, that each distribution transformer shall be capable of feeding all the low voltage consumers in two redundant subsections simultaneously. In this design, the worst-case failure condition is defined as two generator groups out of service, meaning two transformers are out of service. 
 
@@ -41,8 +41,7 @@ Power\, Rating=\frac{4MWe}{0.9}=\underline{4444\,kVA}
 
 %\todo[inline]{What we need the power factor for?}
 
-\subsection*{8c)}
-
+\subsection{Problem 8c)}
 A proper \textit{maximum continuous rating} (MCR) for gensets is one that makes the gensets work in an appropriate load condition. That is, between 70 and 90\% of the load.  
 %\todo{check percentages with TA} in all conditions.
 
@@ -57,7 +56,7 @@ MCR_{engine}=\frac{17500 \, kV\!A \times 0.8}{0.96}=14583 \, kW
 
 %\todo[inline]{power factor is not given for the thrusters. Should we work with 0,8? or only with active power?}
 
-\subsection*{8d)}
+\subsection{Problem 8d)}
 
 %\todo[inline]{should we calculate complex or only real current? we don't have power factors}
 
@@ -67,8 +66,8 @@ The 3-phase current through the generator breakers assuming a power factor of 0.
 P=3\,V\,I\,cos(\phi) \Rightarrow I_{RMS}=\frac{14000 \, kW\!e}{3 \times 11 kV \times 0.8}=530.30 A \Rightarrow I_{Peak}=\sqrt{2}\,I_{RMS}=750\,A
 \]
 
-\subsection*{8e)}
-
+\subsection{Problem 8e)} \label{sec:8e)}
+ 
 %\todo[inline]{power factor and working load for the thrusters' transformers?}
 
 Since the given propulsion power requirement is 42 MW for the worst environmental condition and 34 MW for the \textit{worst case failure} condition, a suitable MCR for the thrusters' motors can be 6.3 MW (the maximum available in the market nowadays is 6.5 MW). With such rating, the propulsion requirement can be supplied by 8 thrusters at 83.3\% load in the worst environmental condition and by 6 at 90\% load in the \textit{worst case failure} condition. 
@@ -83,7 +82,7 @@ S_{t}=\frac{6.3\,MW}{cos(\phi)\,\eta_t\,\eta_f\,\eta_m}=\frac{6300\,W}{0.9 \time
 \]
 
 
-\subsection*{8f)}
+\subsection{Problem 8f)}
 
 %\todo[inline]{only active power? or complex?}
 

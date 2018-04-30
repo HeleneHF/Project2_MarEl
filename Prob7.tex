@@ -1,6 +1,7 @@
 \newpage
-\section*{Problem 7}
-This problem is largely explained in section \nameref{prob_5and6}, but on a different format. Without repeating a lot of the same arguments, the system should be able to deliver enough propulsion, drilling and service power as described in the task description under normal operation. In the case of single failure, it must be able to deliver the minimum propulsion and service load power. This is achieved with having redundant generation groups and two thrusters in each corner. Loosing one (or two) generation group will not lead to too little generated power. Loosing one (or two) thruster groups will not lead to too little propulsion power. This is summed up in Tables \ref{tab:redundantDesignIntention} and \ref{tab:AND_OR_redundantDesignIntention} designed on the same form as in \cite{RedundantDesignIntention_DNV}. \todo{Is this okay? It seem to be OK ;p}
+\section{Problem 7}
+This problem is largely explained in Section \ref{prob_5and6}, but on a different format. Without repeating a lot of the same arguments, the system should be able to deliver enough propulsion, drilling and service power as described in the task description under normal operation. In the case of single failure, it must be able to deliver the minimum propulsion and service load power. This is achieved by having redundant generation groups and two thrusters in each corner, each fed by different generation groups %\todo{we repeat generation groups, see if we can avoid it}. 
+Losing up to two generation groups will not lead insufficient power to supply the demand. Losing up to two thrusters will not lead to too little propulsion power. This is summed up in Tables \ref{tab:redundantDesignIntention} and \ref{tab:AND_OR_redundantDesignIntention} designed on the same form as in \cite{RedundantDesignIntention_DNV}. %\todo{Is this okay? It seem to be OK ;p}
 
 % As stated before, DNV GL defines worst-case failure as the single failure that causes the loss of the most significant redundancy group. In this design, that would correspond to losing one segregation. However, the system was designed to be more redundant and able to withstand losing more than one subsection.  
 
@@ -35,42 +36,170 @@ This problem is largely explained in section \nameref{prob_5and6}, but on a diff
     \label{tab:AND_OR_redundantDesignIntention}
 \end{table}
 
+For identifying the thrusters' group dependencies following the method given in DNV Recommended Practices \cite{RedundantDesignIntention_DNV}, Tables \ref{tab:RedundantComponentGroupsThrusters1} to \ref{tab:RedundantComponentGroupsThrusters4} has been created. It shows how each thruster depends on two different generation groups independently, and each group depends on two gensets and one main switchboard simultaneously. Because of that, it can be stated that for the present design, each thruster is a redundant group on itself because they are fed by two redundant generation groups. 
+
+% \begin{table}[H]
+%     \centering
+%     \begin{tabular}{|m{6cm}|m{3cm}|m{6cm}|}
+%     \hline
+%     \multicolumn{3}{|c|}{\textbf{Redundancy design intention overview by redundant and common component groups}} \\
+%     \hline
+%     Thruster P1.1 & Common X groups & Thruster P1.2 \\
+%     \hline
+%     Dependent on & & Dependent on \\
+%     \hline
+%     Generation Group 1 OR Generation Group 3 & & Generation Group 1 OR Generation Group 2 \\
+%     \hline
+%     (G1.1 AND G1.2) OR (G3.1 AND G3.2) & & (G1.1 AND G1.2) OR (G2.1 AND G2.2) \\
+%     \hline
+%     Dependent on & & Dependent on \\
+%     \hline
+%     MSB1 OR MSB3 & & MSB1 OR MSB2 \\
+%     \hline
+    
+%     \multicolumn{3}{|c|}{} \\
+%     \hline
+%     Thruster P2.1 & Common X groups & Thruster P2.2 \\
+%     \hline
+%     Dependent on & & Dependent on \\
+%     \hline
+%     Generation Group 1 OR Generation Group 2 & & Generation Group 1 OR Generation Group 3 \\
+%     \hline
+%     (G1.1 AND G1.2) OR (G2.1 AND G2.2) & & (G1.1 AND G1.2) OR (G3.1 AND G3.2) \\
+%     \hline
+%     Dependent on & & Dependent on \\
+%     \hline
+%     MSB1 OR MSB2 & & MSB1 OR MSB3 \\
+%     \hline
+
+%     \multicolumn{3}{|c|}{} \\
+%     \hline
+%     Thruster P3.1 & Common X groups & Thruster P3.2 \\
+%     \hline
+%     Dependent on & & Dependent on \\
+%     \hline
+%     Generation Group 3 OR Generation Group 4 & & Generation Group 2 OR Generation Group 4 \\
+%     \hline
+%     (G3.1 AND G3.2) OR (G4.1 AND G4.2) & & (G2.1 AND G2.2) OR (G4.1 AND G4.2) \\
+%     \hline
+%     Dependent on & & Dependent on \\
+%     \hline
+%     MSB3 OR MSB4 & & MSB2 OR MSB4 \\    
+%     \hline
+   
+%     \multicolumn{3}{|c|}{} \\
+%     \hline
+%     Thruster P4.1 & Common X groups & Thruster P4.2 \\
+%     \hline
+%     Dependent on & & Dependent on \\
+%     \hline
+%     Generation Group 2 OR Generation Group 4 & & Generation Group 3 OR Generation Group 4 \\
+%     \hline
+%     (G2.1 AND G2.2) OR (G4.1 AND G4.2) & & (G3.1 AND G3.2) OR (G4.1 AND G4.2) \\
+%     \hline
+%     Dependent on & & Dependent on \\
+%     \hline
+%     MSB2 OR MSB4 & & MSB3 OR MSB4 \\    
+    
+%     \hline
+%     \end{tabular}
+%     \caption{Redundant and common component groups}
+%     \label{tab:RedundantComponentGroupsThrusters}
+% \end{table}
+%todo[green]{add name of the switchboards MSB1, MSB2 etc.}
 \begin{table}[h]
     \centering
-    \begin{tabular}{|l|l|l|}
+    \begin{tabular}{|m{5.6cm}|m{2.5cm}|m{5.6cm}|}
     \hline
-    \multicolumn{3}{|c|}{\textbf{Redundancy design intention overview by redundant and common component groups}} \\
+    \multicolumn{3}{|c|}{\textbf{Redundancy design intention overview}} \\
+    \multicolumn{3}{|c|}{\textbf{redundant and common component groups}} \\
     \hline
-    \text{Redundant A groups} & \text{Common X groups} & \text{Redundant B groups} \\
+    Thruster P1.1 & Common X groups & Thruster P1.2 \\
     \hline
-    
+    Dependent on & & Dependent on \\
+    \hline
+    Generation Group 1 OR Generation Group 3 & & Generation Group 1 OR Generation Group 2 \\
+    \hline
+    (G1.1 AND G1.2) OR (G3.1 AND G3.2) & & (G1.1 AND G1.2) OR (G2.1 AND G2.2) \\
+    \hline
+    Dependent on & & Dependent on \\
+    \hline
+    MSB1 OR MSB3 & & MSB1 OR MSB2 \\
+    \hline
     \end{tabular}
-    \caption{Redundant and common component groups}
-    \label{tab:RedundantComponentGroups}
+    \caption{Redundant and common component groups propulsion bottom port side (group 1)}
+    \label{tab:RedundantComponentGroupsThrusters1}
 \end{table}
 
 \begin{table}[h]
     \centering
-    \begin{tabular}{|l|l|l|}
+    \begin{tabular}{|m{5.6cm}|m{2.5cm}|m{5.6cm}|}
     \hline
-    \multicolumn{3}{|c|}{\textbf{Redundancy design intention overview by redundant and common component groups}} \\
+    \multicolumn{3}{|c|}{\textbf{Redundancy design intention overview}} \\
+    \multicolumn{3}{|c|}{\textbf{redundant and common component groups}} \\
     \hline
-    \text{Thruster 1.1} & \text{Common X groups} & \text{Thruster 1.2} \\
+    Thruster P2.1 & Common X groups & Thruster P2.2 \\
     \hline
-    \text{Dependent on} & & \text{Dependent on} \\
+    Dependent on & & Dependent on \\
     \hline
-    \text{Generation Group 1 OR Generation Group 3} & & \text{Generation Group 1 OR Generation Group 2} \\
+    Generation Group 1 OR Generation Group 2 & & Generation Group 1 OR Generation Group 3 \\
     \hline
-    \text{(G1.1 AND G1.2) OR (G3.1 AND G3.2)} & & \text{(G1.1 AND G1.2) OR (G2.1 AND G2.2)} \\
+    (G1.1 AND G1.2) OR (G2.1 AND G2.2) & & (G1.1 AND G1.2) OR (G3.1 AND G3.2) \\
     \hline
-    \text{Dependent on} & & \text{Dependent on} \\
+    Dependent on & & Dependent on \\
     \hline
-    \text{MSB1 OR MSB3} & & \text{MSB1 OR MSB2} \\
-    
+    MSB1 OR MSB2 & & MSB1 OR MSB3 \\
     \hline
+
     \end{tabular}
-    \caption{Redundant and common component groups}
-    \label{tab:RedundantComponentGroupsThrusters}
+    \caption{Redundant and common component groups propulsion top port side (group 2)}
+    \label{tab:RedundantComponentGroupsThrusters2}
 \end{table}
 
-\todo[green]{add name of the switchboards MSB1, MSB2 etc.}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|m{5.6cm}|m{2.5cm}|m{5.6cm}|}
+    \hline
+    \multicolumn{3}{|c|}{\textbf{Redundancy design intention overview}} \\
+    \multicolumn{3}{|c|}{\textbf{redundant and common component groups}} \\
+    \hline
+    Thruster P3.1 & Common X groups & Thruster P3.2 \\
+    \hline
+    Dependent on & & Dependent on \\
+    \hline
+    Generation Group 3 OR Generation Group 4 & & Generation Group 2 OR Generation Group 4 \\
+    \hline
+    (G3.1 AND G3.2) OR (G4.1 AND G4.2) & & (G2.1 AND G2.2) OR (G4.1 AND G4.2) \\
+    \hline
+    Dependent on & & Dependent on \\
+    \hline
+    MSB3 OR MSB4 & & MSB2 OR MSB4 \\    
+    \hline
+    \end{tabular}
+    \caption{Redundant and common component groups propulsion top starboard side (group 3)}
+    \label{tab:RedundantComponentGroupsThrusters3}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|m{5.6cm}|m{2.5cm}|m{5.6cm}|}
+    \hline
+    \multicolumn{3}{|c|}{\textbf{Redundancy design intention overview}} \\
+    \multicolumn{3}{|c|}{\textbf{redundant and common component groups}} \\
+    \hline
+    Thruster P4.1 & Common X groups & Thruster P4.2 \\
+    \hline
+    Dependent on & & Dependent on \\
+    \hline
+    Generation Group 2 OR Generation Group 4 & & Generation Group 3 OR Generation Group 4 \\
+    \hline
+    (G2.1 AND G2.2) OR (G4.1 AND G4.2) & & (G3.1 AND G3.2) OR (G4.1 AND G4.2) \\
+    \hline
+    Dependent on & & Dependent on \\
+    \hline
+    MSB2 OR MSB4 & & MSB3 OR MSB4 \\    
+    \hline
+    \end{tabular}
+    \caption{Redundant and common component groups propulsion bottom starboard side (group 4)}
+    \label{tab:RedundantComponentGroupsThrusters4}
+\end{table}
