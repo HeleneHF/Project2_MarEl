@@ -1,10 +1,10 @@
 \section*{Problem 8}
-The genset that has been used as reference in the design is the MAK Marine WM 46 DF described in \cite[p.128 -129]{CatGenerators}. The specific pages can also be found in Appendix \ref{sec:referenceGenset}. There it states that the generator efficiency is approximately 0.96\% and the power factor is 0.8. A power factor value of 0.8 is also assumed in the NORSOK standard \cite{NORSOKstandard}, therefore these values are adopted for the calculations. 
+The genset that has been used as reference in the design is the MAK Marine WM 46 DF described in \cite[p.128 -129]{CatGenerators}. There it states that the generator efficiency is approximately 0.96\% and the power factor is 0.8. A power factor value of 0.8 is also assumed in the NORSOK standard \cite{NORSOKstandard}, therefore these values are adopted for the calculations. 
 
 \subsection*{8a)}
 The voltage adopted for the main switchboards is 11kV, that is the recommended level by the NORSOK standard \cite[p.10]{NORSOKstandard} for systems where the total installed generated power exceeds 20MW.
 
-In the design used, the thrusters are also connected to separate switchboards. For such power levels, the NORSOK standard recommends voltage levels between 2.4 and 6.6kV \cite{NORSOKstandard}. The adoption of such voltages would lead to the need of installing one transformer on each feeder, which would lead to significant extra cost and a more complex design. It was therefore decided to keep the voltage level at 11kV also for these switchboards. \todo{Confirm with the lecturer/TA if this is OK}  
+In the design used, the thrusters are also connected to separate switchboards. For such power levels, the NORSOK standard recommends voltage levels between 2.4 and 6.6kV \cite{NORSOKstandard}. The adoption of such voltages would lead to the need of installing one transformer on each feeder, which would lead to significant extra cost and a more complex design. It was therefore decided to keep the voltage level at 11kV also for these switchboards. %\todo{Confirm with the lecturer/TA if this is OK}  
 
 % Regarding the Thrusters' switchboards, the standards recommend voltage levels between 2.4 and 6.6 kV. But the adoption of such voltages would lead to the installation of one transformer on each feeder, then it has been decided to keep the 11kV level on the switchboards.
 
@@ -14,14 +14,32 @@ In the design used, the thrusters are also connected to separate switchboards. F
 
 \subsection*{8b)}
 
-\todo{Ask if the transformers should work at a partial load (i.e if their rating should be more than 4MWe)}
+%\todo{Ask if the transformers should work at a partial load (i.e if their rating should be more than 4MWe)}
 
-Since the service load after single failure is 4MW, and each distribution transformer shall be capable of feeding all the low voltage consumers in two redundant subsections \todo{see that they call "subsection" instead of "segregations"} simultaneously (given requirements) and the defined \textit{worst case failure} is taken as two \colorbox{green}{segregations} out of service, each of them shouls be capable of supplying 4MW active power. \todo{ask if here should we comment something about the reactive power with the 0.9 power factor given}.
+\todo[inline]{Helene v2:}
+The service load after single failure (assumed the same for worst case failure) is 4MW and the service load under normal operations is in Section \nameref{Sec:designRequirements} assumed to be 12MW. It is required, that each distribution transformer shall be capable of feeding all the low voltage consumers in two redundant subsections simultaneously. In this design, the worst-case failure condition is defined as two generator groups out of service, meaning two transformers are out of service. 
 
-Other requirement to take into account is the service load during normal operation, which is not given and has been assumed to be 12MW for the calculations.
+Under normal operation, the four transformers should therefore be able to supply a minimum of 12MWe power combined. In this design, the transformers are chosen to be 4MW each, making it possible to supply sufficient power with three transformers and one in stand-by. 
 
-Finally, the transformers should be capable of supplying at least 4MWe active power each and 12MWe combined. \colorbox{green}{4MWe} has been adopted as the rated power for each of the service load transformers, thus being capable of supplying each of them the \textit{worst case failure} service load and the normal operation service load combined with other two, leaving one in stand-by condition.
+For worst-case failure condition, the two remaining transformers should be able to provide 4MWe power each. Using the power factor of 0.9, the rated power for the distribution transformers would be 
 
+\[
+Power\, Rating=\frac{4MWe}{0.9}=\underline{4444\,kVA}
+\]
+
+\todo[inline]{Old?}
+
+% Old
+% Since the service load after single failure is 4MW, and each distribution transformer shall be capable of feeding all the low voltage consumers in two redundant subsections simultaneously (given requirements) and the defined \textit{worst case failure} is taken as two subsection out of service, each of them should be capable of supplying 4MW active power. 
+% %\todo{ask if here should we comment something about the reactive power with the 0.9 power factor given}.
+
+% Other requirement to take into account is the service load during normal operation, which is not given and has been assumed to be 12MW for the calculations.
+
+% Finally, the transformers should be capable of supplying at least 4MWe active power each and 12MWe combined. 4MWe has been adopted as the rated power for each of the service load transformers, thus being capable of supplying each of them the \textit{worst case failure} service load and the normal operation service load combined with other two, leaving one in stand-by condition. Finally, the rated power for the distribution transformers, assuming a power factor value of 0.9, would be:
+
+% \[
+% Power\, Rating=\frac{4MWe}{0.9}=\underline{4444\,kVA}
+% \]
 
 %\todo[inline]{I don't exactly understand what do they mean with 'Each distribution transformer shall be capable of feeding all the low voltage consumers in two redundant subsections simultaneously'
 
@@ -29,38 +47,52 @@ Finally, the transformers should be capable of supplying at least 4MWe active po
 
 \subsection*{8c)}
 
-A proper \textit{maximum continuous rating} (MCR) for gensets is one that makes the gensets work in an appropriate load condition, that is \colorbox{green}{between 70 and 90\% of the load} \todo{check percentages with TA} in all conditions.
+A proper \textit{maximum continuous rating} (MCR) for gensets is one that makes the gensets work in an appropriate load condition. That is, between 70 and 90\% of the load.  
+%\todo{check percentages with TA} in all conditions.
 
-For the adopted gensets configuration and the power requirements for normal and \textit{worst case failure} conditions, a 14MWe MCR for the gensets (17500 kVA for a power factor value of 0.8 \cite{CatGenerators}) will allow the gensets to work, as showed in Table \ref{tab:gensetLoad}, at 71.98\% or 83.98\% load when 7 or 6 are connected respectively. In the same way, for \textit{worst case failure} if 4 gensets were connected, they would work at 72,96\% load or, in extreme case, 3 could supply the required power at 97.28\% load. In the same way, a MCR between 12.5 and 14.5 KWe (15625 and 18125 kVA at 0.8 power factor) would allow the gensets to work in good load conditions. 
+For the adopted gensets configuration and the power requirements for normal and \textit{worst case failure} conditions, and a MCR of 14MWe for the gensets (17500 kVA for a power factor value of 0.8 \cite{CatGenerators}) will allow the gensets to work at 71.98\% or 83.98\% load when 7 or 6 gensets are connected respectively. 
 
-A proper MCR for the diesel engine would be, assuming 96\% efficiency and 0.8 power factor \cite{CatGenerators}:
+In the same way, for \textit{worst case failure} if 4 gensets were connected, they would work at 72,96\% load or, in extreme case, 3 gensets could supply the required power at 97.28\% load. A MCR between 12.5kWe and 14.5 kWe (15625 and 18125 kVA at 0.8 power factor) would allow the gensets to work in good load conditions. 
 
+The reference values for the efficiency is 96\% and power factor is 0.8 \cite{CatGenerators}. Assuming this, a proper MCR for the diesel engine would be
 \[
 MCR_{engine}=\frac{17500 \, kV\!A \times 0.8}{0.96}=14583 \, kW
 \]
 
-\todo[inline]{power factor is not given for the thrusters. Should we work with 0,8? or only with active power?}
+%\todo[inline]{power factor is not given for the thrusters. Should we work with 0,8? or only with active power?}
 
 \subsection*{8d)}
 
-\todo[inline]{should we calculate complex or only real current? we don't have power factors}
+%\todo[inline]{should we calculate complex or only real current? we don't have power factors}
 
-3-phase current through generator breakers for 0,8 power factor:
+The 3-phase current through the generator breakers assuming a power factor of 0.8 power factor is
 
 \[
-P=3\,V\,I\,cos(\phi) \Rightarrow I=\frac{P}{3\,V\,cos(\phi)}=\frac{17500 kVA}{3 \times 11 kV \times 0.8}=662.88 A
+P=3\,V\,I\,cos(\phi) \Rightarrow I_{RMS}=\frac{14000 \, kW\!e}{3 \times 11 kV \times 0.8}=530.30 A \Rightarrow I_{Peak}=\sqrt{2}\,I_{RMS}=750\,A
 \]
 
 \subsection*{8e)}
 
-\todo[inline]{power factor and working load for the thrusters' transformers?}
+%\todo[inline]{power factor and working load for the thrusters' transformers?}
+
+Since the given propulsion power requirement is 42 MW for the worst environmental condition and 34 MW for the \textit{worst case failure} condition, a suitable MCR for the thrusters' motors can be 6.3 MW (the maximum available in the market nowadays is 6.5 MW). With such rating, the propulsion requirement can be supplied by 8 thrusters at 83.3\% load in the worst environmental condition and by 6 at 90\% load in the \textit{worst case failure} condition. 
+
+% Helene: 
+Assuming a power factor of 0.9 and the same efficiencies for the transformer, motor and frequency converter as in table \ref{tab:efficiencies}, a suitable rating for the transformer can be
+
+% For supplying 6.3 MWe power, a suitable rating for the transformer can be, assuming the values for its power factor 0.9 and 0.993 efficiency, and 0.960 and 0.985 for the motor and frequency converter efficiencies respectively as stated in Table \ref{tab:efficiencies}:
+
+\[
+S_{t}=\frac{6.3\,MW}{cos(\phi)\,\eta_t\,\eta_f\,\eta_m}=\frac{6300\,W}{0.9 \times 0.993 \times 0.985 \times 0.960}=7455 \, kV\!A
+\]
+
 
 \subsection*{8f)}
 
-\todo[inline]{only active power? or complex?}
+%\todo[inline]{only active power? or complex?}
 
 The total required power for \textit{worst case failure} condition is, as shown in Table \ref{tab:powerDemand}, 40.86MW, and since the in such condition there will be foru 14MW generators available: 
 
 \[
-Remaining\,\,Power=4 \times 14\,MW - 40.86\,MW = 56\,MW - 40.86\,MW = \underline{15.14 \, MW}
+Remaining\,\,Power=4 \times 14\,MWe - 40.86\,MWe = 56\,MWe - 40.86\,MWe = \underline{15.14 \, MWe}
 \]

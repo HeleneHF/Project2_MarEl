@@ -1,2 +1,50 @@
 \newpage
 \section*{Problem 7}
+This problem is largely explained in section \nameref{prob_5and6}, but on a different format. Without repeating a lot of the same arguments, the system should be able to deliver enough propulsion, drilling and service power as described in the task description under normal operation. In the case of single failure, it must be able to deliver the minimum propulsion and service load power. This is achieved with having redundant generation groups and two thrusters in each corner. Loosing one (or two) generation group will not lead to too little generated power. Loosing one (or two) thruster groups will not lead to too little propulsion power. This is summed up in Tables \ref{tab:redundantDesignIntention} and \ref{tab:AND_OR_redundantDesignIntention} designed on the same form as in \cite{RedundantDesignIntention_DNV}. \todo{Is this okay? It seem to be OK ;p}
+
+% As stated before, DNV GL defines worst-case failure as the single failure that causes the loss of the most significant redundancy group. In this design, that would correspond to losing one segregation. However, the system was designed to be more redundant and able to withstand losing more than one subsection.  
+
+
+\begin{table}[h]
+    %\centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        \text{Redundancy design intention} & & \\
+        \hline
+        \makecell{\text{Normal operation \\ before failure} $\rightarrow$} & \makecell{\text{3 OR 4 generation groups are \\ running. In total, able to \\ provide 66MW} as calculated in table \ref{tab:powerDemand}} & \makecell{\text{Active redundancy \\ from redundant \\ generation groups}}\\
+        \hline
+        \makecell{\text{In the case of \\ a single failure} $\rightarrow$} & \makecell{\text{3 OR 2 generators groups are running. \\ In total, able to provide \\ 38MW as calculated in table \ref{tab:powerDemand}}} &  \makecell{\text{Active redundancy \\ from redundant \\ generation groups}}   \\
+        \hline
+    \end{tabular}
+    \caption{Redundancy design intention explained}
+    \label{tab:redundantDesignIntention}
+\end{table}
+
+\begin{table}[h]
+    %\centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        \text{Redundancy design intention} & & \\
+        \hline
+        \makecell{\text{Normal operation \\ before failure} $\rightarrow$} & \makecell{(G1 AND G2 AND G3) \\ OR (G1 AND G3 AND G4) \\ OR (G1 AND G2 AND G4) \\ OR (G2 AND G3 AND G4) \\ OR (G1 AND G2 AND G3 AND G4)} & \makecell{\text{Active redundancy \\ from redundant \\ generation groups}}\\
+        \hline
+        \makecell{\text{In the case of \\ a single failure} $\rightarrow$} & \makecell{(G1 AND G2 AND G3) \\  OR (G1 AND G3 AND G4) \\ OR (G1 AND G2 AND G4) \\ OR (G2 AND G3 AND G4) \\OR (G1 AND G2) OR (G1 AND G3) \\ OR (G1 AND G4) OR (G2 AND G3) \\ OR (G2 AND G4) OR (G3 AND G4)} & \makecell{\text{Active redundancy \\ from redundant \\ generation groups}}   \\
+        \hline
+    \end{tabular}
+    \caption{Redundancy design intention}
+    \label{tab:AND_OR_redundantDesignIntention}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|l|l|}
+    \hline
+    \multicolumn{3}{|c|}{\textbf{Redundancy design intention overview by redundant and common component groups}} \\
+    \hline
+    \text{Redundant A groups} & \text{Common X groups} & \text{Redundant B groups} \\
+    \hline
+    
+    \end{tabular}
+    \caption{Redundant and common component groups}
+    \label{tab:RedundantComponentGroups}
+\end{table}
