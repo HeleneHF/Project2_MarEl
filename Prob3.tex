@@ -20,11 +20,11 @@ The \textit{Joystick system} provides manual control of the system, letting the 
 %%%%%%%%%%%%%%%%%% 3b) %%%%%%%%%55%%%%%%%%%%%
 \subsection*{3b)} \label{sec:3b}
 \myParagraph{Power system:}
-DNV GL defines the \textbf{Power system} as all components and systems necessary to supply the DP system with power. That would include the prime movers with auxiliary systems, the generators, the switchboards, the UPSs, the cabling and distribution system. If the system is classed as DYNPOS(AUTR) or DYNPOS(AUTRO), it also includes a power management system (PMS) \cite{RulesShipsDNVGLPart6Chap3}.  
+DNV GL defines the \textbf{power system} as all components and systems necessary to supply the DP system with power. That would include the prime movers with auxiliary systems, the generators, the switchboards, the UPSs, the cabling and distribution system. If the system is classed as DYNPOS(AUTR) or DYNPOS(AUTRO), it also includes a power management system (PMS) \cite{RulesShipsDNVGLPart6Chap3}.  
 
 
 \myParagraph{Thruster system:}
-DNV GL defines the \textbf{Thruster system} as all components necessary to supply the DP system with thrust force and direction. That would include the thrusters with drives including the auxiliary system, the thruster control system, the necessary cabling and the main propellers and rudders if they are also part of the DP system \cite{RulesShipsDNVGLPart6Chap3}. (The main propellers and/or thrusters can be disconnected from the DP system and only used in transit. In that case, the DP system would only consist of tunnel thrusters, azimuth thrusters etc.)
+DNV GL defines the \textbf{thruster system} as all components necessary to supply the DP system with thrust force and direction. That would include the thrusters with drives including the auxiliary system, the thruster control system, the necessary cabling and the main propellers and rudders if they are also part of the DP system \cite{RulesShipsDNVGLPart6Chap3}. (The main propellers and/or thrusters can be disconnected from the DP system and only used in transit. In that case, the DP system would only consist of tunnel thrusters, azimuth thrusters etc.)
 
 
 
@@ -33,17 +33,21 @@ DNV GL defines the \textbf{Thruster system} as all components necessary to suppl
 \subsection*{3c)}
 
 \myParagraph{Reliability:} 
-In the DNV GL rules, \textbf{Reliability} ability of a component or system to perform its required function without failure during a specified time interval
+In the DNV GL rules, \textbf{reliability} is defined as the ability of a component or system to perform its required function without failure during a specified time interval \cite{RulesShipsDNVGLPart6Chap3}.
 
 \myParagraph{Redundancy:} 
 \textbf{Redundancy} is defined as the ability of a component or system to maintain its function when one failure has occurred.
-Classification societies interpret \textit{redundancy} differently. For DNV GL it can be achieved, for instance, by installation of multiple components, systems or alternative means of performing a function \cite{RulesShipsDNVGLPart6Chap3}. It should also take into account the long term loss of a major item of machinery such as a generator or thruster \cite{RecommendedPractices_DP_DNVGL}. \todo{Add another definition by another classification society to see the difference?}
+Classification societies interpret \textit{redundancy} differently. For DNV GL, it can be achieved by for instance installation of multiple components, systems or alternative means of performing a function \cite{RulesShipsDNVGLPart6Chap3}. It should also take into account the long term loss \todo{What do you mean here?} of a major item of machinery such as a generator or thruster \cite{RecommendedPractices_DP_DNVGL}.  %\todo{Add another definition by another classification society to see the difference?}
 
-\todo[inline]{By now it is copy-paste}
 
 \myParagraph{Redundancy Group:} 
+\textbf{Helene:}
+A redundancy group is defined as all components and systems that are subjected to a single failure \cite{RulesShipsDNVGLPart6Chap3}. 
 
-all components and systems that is subject to a single failure as specified in [4], for the specific notations
+For example, for DYNPOS(AUTR) and DYNPOS(AUTRO) systems, there must be redundancy. That means that if there is a (single) failure, the system must still be operational. This can for example be achieved by having two separate machine rooms made in such a way that if one is not in service due to a single failure taking out that entire machine room, the second is still able to provide the necessary power for the vessel to stay in position. That would then be two redundancy groups. \todo{So not sure if this makes any sense}  
+ 
+\textbf{Old:}
+DNV GL defines a \textbf{redundancy group} as all components and systems that is subject to a single failure as specified in [4], for the specific notations
 
 Guidance note:
 The redundancy groups will emerge as a consequence of the worst case single failure within each
@@ -65,18 +69,16 @@ the consequence analysis
 %%%%%%% 3d) %%%%%%%%%%%
 \subsection*{3d)} \label{Sec:3d}
 
-\myParagraph{Failure}: 
-DNV GL defines \textbf{failure} as an occurrence in a component or system causing one or both of the following effects:
-\begin{itemize}
-    \item loss of component or system function.
-    \item deterioration o f functional capability to such an extent that the safety of the vessel, personnel or environment is significantly reduced.
-\end{itemize}
+\myParagraph{Failure:} 
+DNV GL defines (single) \textbf{failure} as an occurrence in a component or system causing either the loss of a component or system function, or causes causes deterioration of a functional capability to such an extent that the safety of either personnel, the environment or the vessel is significantly reduce, or both \cite{RulesShipsDNVGLPart6Chap3}.
 
-Depending on the DP class, the definition of single failure includes or not certain failure modes. For DYNPOS(AUTRO) it includes: incidents of fire and flooding and all break-downs of systems and components.
+Depending on the DP class, what is considered a (single) failure varies a bit. For DYNPOS(AUTRO) it is stricter than for a DYNPOS(AUT) or DYNPOS(AUTR) system and also includes incidents of fire and flooding, and all break-downs of systems and components and more \cite{RulesShipsDNVGLPart6Chap3}.
 
-\myParagraph{Worst-case failure}: failure that results in the largest reduction of the position and/or heading keeping capacity. This means loss of the most significant redundancy group, for the prevailing operation.
+\myParagraph{Worst-case failure:} 
+\textbf{Worst-case failure} is by DNV GL defined as the failure that results in the largest reduction of the position and/or heading keeping capacity. This means loss of the most significant redundancy group \cite{RulesShipsDNVGLPart6Chap3}.
 
-\todo[inline]{6.11 Consequence analysis
-6.11.1 The dynamic positioning control systems shall perform an analysis of the ability to maintain position after worst case failures. An alarm shall be initiated, with a maximum delay of 5 minutes, when a failure will cause loss of position in the prevailing weather conditions. In case the redundancy is based on limited energy sources like e.g. batteries then the duration of the delay should be considered.
-Guidance note:
-This analysis should verify that the thrusters and generators remaining in operation after the worst case failure can generate the same resultant thruster force and moment as required before the failure.}
+
+% \todo[inline]{6.11 Consequence analysis
+% 6.11.1 The dynamic positioning control systems shall perform an analysis of the ability to maintain position after worst case failures. An alarm shall be initiated, with a maximum delay of 5 minutes, when a failure will cause loss of position in the prevailing weather conditions. In case the redundancy is based on limited energy sources like e.g. batteries then the duration of the delay should be considered.
+% Guidance note:
+% This analysis should verify that the thrusters and generators remaining in operation after the worst case failure can generate the same resultant thruster force and moment as required before the failure.}
